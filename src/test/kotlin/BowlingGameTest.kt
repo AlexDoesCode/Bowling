@@ -1,18 +1,23 @@
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
-import org.mockito.Mockito.mock
 import org.mockito.Mockito.verifyZeroInteractions
+import org.mockito.junit.MockitoJUnit
 import kotlin.random.Random
 
 class BowlingGameTest {
 
+    @Rule
+    @JvmField
+    val mockitoRule = MockitoJUnit.rule()
+
     private lateinit var game: BowlingGame
 
     @Mock
-    private val scoreCalculatorMock = mock(ScoreCalculator::class.java)
+    private lateinit var scoreCalculatorMock: ScoreCalculator
 
     @Before
     fun setUp() {
