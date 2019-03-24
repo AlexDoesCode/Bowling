@@ -1,0 +1,3 @@
+enum class FrameType {
+    BASIC, SPARE, STRIKE, NOT_ENOUGH_DATA, EXCESS_DATA, EXTRA
+}
